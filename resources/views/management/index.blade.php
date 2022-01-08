@@ -39,7 +39,7 @@
                           </div>
                        </a>
                       </div>
-                      
+
                       <div class="col-xl-3 col-sm-6 col-12">
                           <div class="card shadow border-0">
                               <div class="card-body">
@@ -71,7 +71,7 @@
                           <div class="card shadow border-0">
                               <div class="card-body">
                                   <div class="row">
-                                      <div class="col"> <span class="h6 font-semibold text-muted text-sm d-block mb-2">عدد المنتجات</span> <span class="h3 font-bold mb-0">1.400</span> </div>
+                                      <div class="col"> <span class="h6 font-semibold text-muted text-sm d-block mb-2">عدد المنتجات</span> <span class="h3 font-bold mb-0">{{$productsnum}}</span> </div>
                                       <div class="col-auto">
                                           <div class="icon icon-shape bg-info text-white text-lg rounded-circle"> <i class="bi bi-clock-history"></i> </div>
                                       </div>
@@ -97,7 +97,7 @@
                           <div class="card shadow border-0">
                               <div class="card-body">
                                   <div class="row">
-                                      <div class="col"> <span class="h6 font-semibold text-muted text-sm d-block mb-2">منتجات مضافة اليوم</span> <span class="h3 font-bold mb-0">239</span> </div>
+                                      <div class="col"> <span class="h6 font-semibold text-muted text-sm d-block mb-2">منتجات مضافة اليوم</span> <span class="h3 font-bold mb-0">{{ $todayproducts}}</span> </div>
                                       <div class="col-auto">
                                           <div class="icon icon-shape bg-warning text-white text-lg rounded-circle"> <i class="bi bi-minecart-loaded"></i> </div>
                                       </div>
