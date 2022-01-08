@@ -17,11 +17,8 @@
 
     <!-- Styles -->
 <!-- CSS only -->
-<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/dt-1.11.3/datatables.min.css"/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -46,14 +43,6 @@
  <!-- Google Fonts -->
  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
- <!-- Vendor CSS Files -->
- <link href="sty/assets/vendor/aos/aos.css" rel="stylesheet">
- <link href="sty/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
- <link href="sty/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
- <link href="sty/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
- <link href="sty/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
- <link href="sty/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
- <link href="sty/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
  <!-- Templatsty/e Main CSS File -->
  <link href="sty/assets/css/style.css" rel="stylesheet">
@@ -77,20 +66,8 @@
     </div>
 
     @yield('scripts')  
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
-    <script src="{{asset('js/soft-ui-dashboard.js')}}"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="https://js.pusher.com/7.0/pusher.min.js"></script>
-<!-- Vendor JS Files -->
-<script src="sty/assets/vendor/aos/aos.js"></script>
-<script src="sty/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="sty/assets/vendor/glightbox/js/glightbox.min.js"></script>
-<script src="sty/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-<script src="sty/assets/vendor/php-email-form/validate.js"></script>
-<script src="sty/assets/vendor/swiper/swiper-bundle.min.js"></script>
-<script src="sty/assets/vendor/waypoints/noframework.waypoints.js"></script>
 
-<!-- Template Main JS File -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="sty/assets/js/main.js"></script>
 </body>
 </html>
