@@ -96,7 +96,7 @@ class AdminController extends Controller
 
 
 
-        return view('management.index', compact(' vproductsnum','todayproducts','hme','setups','prd','service','about','portfolio','team','contactus'));
+        return view('management.index', compact('productsnum','todayproducts','hme','setups','prd','service','about','portfolio','team','contactus'));
     }
     public function eco()
     {
