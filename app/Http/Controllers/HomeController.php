@@ -47,39 +47,7 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
-    {
-
-        $this->sign();
-        $hme = Hme::first();
-        $service_t = Service::first();
-        $setups = Setup::get();
-        $service = Service::get();
-        $about = About::first();
-        $portfolio = Portfolio::get(); 
-        $prd = prd::get(); 
-        $portfoliocats = prd::get();
-        $team_t = Team::first();
-        $team = Team::get();
-        $setup = Setup::first();
-        $contactus = Contactus::first();
-/////////////////////////
-
-
-$setups = Setup::get();
-$products = product::get(); //where('sec7','>',5)->
-$toprated = product::orderByDesc('sec7')->take(9)->get(); 
-$reviewd = product::orderByDesc('sec8')->take(9)->get(); 
-$latest = product::orderByDesc('id')->take(9)->get(); 
-
-$mcats = mcat::get(); 
-$scats = scat::get(); 
-$mostvisit = product::orderByDesc('sec1')->take(5)->get(); 
-
-
-///////////////
-        return view('home',compact('hme','setup','prd','setups','mostvisit','service_t','service','about','portfolio','portfoliocats','team_t','team','contactus','products','toprated','setups','mcats','scats','reviewd','latest'));
-    }
+    
 
     public function showproduct($id)
     {
@@ -117,7 +85,10 @@ public function sign()
         'ip'=>request()->ip(),
         'ip_'=>request()->getClientIp(),
         'browser'=>request()->userAgent(),
-        'mac'=>exec('getmac')
+        'mac'=>exec('getmac'),
+        'latitude'=>$currentUserInfo->latitude,
+        'longitude'=>$currentUserInfo->longitude,
+
 
                 ];
 
@@ -143,6 +114,7 @@ public function products(Request $request)
         $setups = Setup::get(); 
 
 
+        $this->sign();
         $products = product::orderByDesc('id')->take(9)->get(); //where('sec7','>',5)->
         
         $last = $products[0]->id; //where('sec7','>',5)->
@@ -218,6 +190,7 @@ public function s__products(Request $request)
         $setups = Setup::get();
         
 
+        $this->sign();
         $products = product::orderByDesc('id')->take(9)->where('sec9_ar',$request->id)->get(); //where('sec7','>',5)->
 
     $last = $products[0]->id; //where('sec7','>',5)->
@@ -241,6 +214,7 @@ public function sub_cats(Request $request)
 {
         $setups = Setup::get();
         
+        $this->sign();
         
         $toprated = product::orderByDesc('sec7')->take(9)->where('sec9_ar',$request->id)->get(); 
         $reviewd = product::orderByDesc('sec8')->take(9)->where('sec9_ar',$request->id)->get(); 

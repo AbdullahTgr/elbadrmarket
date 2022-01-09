@@ -28,6 +28,7 @@ use App\Models\Contactus;
 use App\Models\Cashout;
 use App\Models\Bank;
 use App\Models\Comment  ;
+use App\Models\visitors;
 
 use App\Models\mcat;
 use App\Models\scat;
@@ -73,8 +74,10 @@ class AdminController extends Controller
         $team = Team::get();
         $productsnum = product::get()->count();
         $todayproducts = product::where('created_at','like','%'.substr(date('Y-m-d H:i:s'),0,10).'%')->get()->count();
+        $todat_visitorcount = visitors::where('created_at','like','%'.substr(date('Y-m-d H:i:s'),0,10).'%')->get()->count();
+        $visitorcount = visitors::get()->count();
 
-        return view('management.index', compact('productsnum','todayproducts','hme','setups','prd','service','about','portfolio','team','contactus'));
+        return view('management.index', compact('visitorcount','todat_visitorcount','productsnum','todayproducts','hme','setups','prd','service','about','portfolio','team','contactus'));
     }
 
 
@@ -94,11 +97,16 @@ class AdminController extends Controller
 
         
         $productsnum = product::get()->count();
+        $usernum = User::get()->count();
+        
         $todayproducts = product::where('created_at','like','%'.substr(date('Y-m-d H:i:s'),0,10).'%')->get()->count();
+ 
+        $todat_visitorcount = visitors::where('created_at','like','%'.substr(date('Y-m-d H:i:s'),0,10).'%')->get()->count();
+        $visitorcount = visitors::get()->count();
 
 
 
-        return view('management.index', compact('productsnum','todayproducts','hme','setups','prd','service','about','portfolio','team','contactus'));
+        return view('management.index', compact('visitorcount','todat_visitorcount','usernum','productsnum','todayproducts','hme','setups','prd','service','about','portfolio','team','contactus'));
     }
     public function eco()
     {
