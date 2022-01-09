@@ -71,8 +71,10 @@ class AdminController extends Controller
         $prd = prd::get();
         $portfolio = Portfolio::get();
         $team = Team::get();
+        $productsnum = product::get()->count();
+        $todayproducts = product::where('created_at','like','%'.substr(date('Y-m-d H:i:s'),0,10).'%')->get()->count();
 
-        return view('management.index', compact('hme','setups','prd','service','about','portfolio','team','contactus'));
+        return view('management.index', compact('productsnum','todayproducts','hme','setups','prd','service','about','portfolio','team','contactus'));
     }
 
 
