@@ -85,7 +85,7 @@ public function sign()
         'ip'=>request()->ip(),
         'ip_'=>request()->getClientIp(),
         'browser'=>request()->userAgent(),
-        'mac'=>exec('getmac'),
+       // 'mac'=>exec('getmac'),
         'latitude'=>$currentUserInfo->latitude,
         'longitude'=>$currentUserInfo->longitude,
 
