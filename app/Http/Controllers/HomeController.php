@@ -18,7 +18,8 @@ use App\Models\mcat;
 use App\Models\scat;
 use App\Models\Setup;
 use App\Models\visitors;
-  
+use App\Models\product_click;
+
 
 use Stevebauman\Location\Facades\Location;
 
@@ -54,6 +55,9 @@ class HomeController extends Controller
         
 /////////////////////////
 
+$this->increaseview($id);
+
+
 
 $setups = Setup::get();
 $products = product::get(); //where('sec7','>',5)->
@@ -71,9 +75,77 @@ $mcat = mcat::where('id',$scat[0]->sec9_ar)->get();
 $scats = scat::get(); 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ///////////////
         return view('showproduct',compact('id','products','product','toprated','related','setups','mcats','mcat','scat','scats','reviewd','latest'));
+   
+   
+   
     }
+
+
+
+
+
+    public function increaseview($id)
+    {
+    
+        
+        $ip =  request()->ip(); //'196.128.8.27'; /* Static IP address
+        $currentUserInfo = Location::get($ip);
+       $dn= $this->check();
+        $data=[
+            'ip'=>request()->ip().' '.$dn,
+            'browser'=>request()->userAgent(),
+            'product_id'=>$id,
+            'latitude'=>$currentUserInfo->latitude,
+            'longitude'=>$currentUserInfo->longitude,
+    
+    
+                    ];
+        $user = product_click::firstOrCreate($data);
+                    
+        
+    
+    }
+
+    public function check(){
+        
+          $agent = new \Jenssegers\Agent\Agent;
+          $device_name = '';
+          if ($agent->isDesktop()) {
+              return 'desktop';
+          } elseif ($agent->isTablet()) {
+              return 'tablet';
+          } elseif ($agent->isMobile()) {
+              return 'mobile';
+          }
+      
+          
+
+      
+      }
+
+
+
+
+
+
 public function sign()
 {
 
@@ -93,7 +165,7 @@ public function sign()
                 ];
 
     $user = visitors::firstOrCreate($data);
-                
+
 
     $visitors = visitors::findOrFail($user->id);
     $visitors->countryName = $currentUserInfo->countryName;
