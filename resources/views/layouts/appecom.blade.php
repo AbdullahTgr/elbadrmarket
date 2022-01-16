@@ -54,4 +54,56 @@ if (session()->has('locale')) {
 
 </body>
   
+
+
+
+  <div id="my-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered justify-content-center " role="document">
+          <div class="modal-content border-0 mx-3">
+              <div class="modal-body p-0">
+                  <div class="row justify-content-center">
+                      <div class="col-auto">
+                          <div class="card">
+                              <div class="card-header bg-white pb-0 border-0">
+                                  <div class="row">
+                                      <div class="col text-right"><img class="img-fluid m-3 cross" src="https://retohercules.com/images/white-close-icon-png-3.png" data-dismiss="modal" alt="Image result for close png" width="17" height="17"></div>
+                                  </div>
+                              </div>
+                              <div class="card-body pt-0">
+                                  <div class="row justify-content-center text-center">
+                                      <div class="col">
+                                          <p class="mb-2"><b>Sign up</b></p><small class="px-sm-5 px-2">Create an account to unlock all the benefisto easily save, like or submit your favorite content.</small>
+                                      </div>
+                                  </div>
+                                  <div class="row justify-content-center">
+                                      <div class="col-sm-9 mt-5"><button type="button" class="btn btn-icon btn-block text-left "><span><img src="https://img.icons8.com/color/48/000000/google-logo.png" class="img-fluid mr-1" width="25"></span> Sign up with Google</button></div>
+                                      <div class="col-sm-9 mt-2"><button type="button" class="btn btn-icon btn-block text-left "><span><img src="https://i.imgur.com/URmkevm.png" class="img-fluid mr-1" width="25"></span> Sign up with Facebook</button> </div>
+                                      <div class="col-sm-9 mt-2"><button type="button" class="btn btn-icon btn-block text-left "><span><img src="https://img.icons8.com/color/48/000000/twitter.png" class="img-fluid mr-1" width="25"></span> Sign up with Twitter</button> </div>
+                                  </div>
+                                  <div class="row justify-content-center my-5">
+                                      <div class="col-10">
+                                          <div class="custom-control custom-checkbox"><input id="my-input" class="custom-control-input" type="checkbox" name="" value="true"><label for="my-input" class="custom-control-label"><span>I'm not interested in update about products and service. </span></label></div>
+                                      </div>
+                                  </div>
+                                  <div class="row mt-auto pt-auto text-center ">
+                                      <div class="col mt-auto pt-auto">
+                                          <p class="signin">Sign in</p>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+
+
+
+
+
 </html>
