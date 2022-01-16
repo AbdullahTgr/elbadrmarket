@@ -8,35 +8,28 @@
     Name
     <textarea class="form-control sec2" name="sec2" style="width: 100%"></textarea> 
     
-    Position
-    <textarea class="form-control sec3" name="sec3" style="width: 100%"></textarea> 
+    
+    <textarea style="display: none"  class="form-control sec3" name="sec3" style="width: 100%"></textarea> 
     
     Description
     <textarea class="form-control sec4" name="sec4" style="width: 100%"></textarea> 
     
 
 
-    الاسم
-    <textarea class="form-control sec2_ar" name="sec2_ar" style="width: 100%"></textarea> 
+    <textarea style="display: none" class="form-control sec2_ar" name="sec2_ar" style="width: 100%"></textarea> 
     
-    المرتبة
-    <textarea class="form-control sec3_ar" name="sec3_ar" style="width: 100%"></textarea> 
+    <textarea style="display: none" class="form-control sec3_ar" name="sec3_ar" style="width: 100%"></textarea> 
     
-    تفاصيل
-    <textarea class="form-control sec4_ar" name="sec4_ar" style="width: 100%"></textarea> 
+    <textarea style="display: none" class="form-control sec4_ar" name="sec4_ar" style="width: 100%"></textarea> 
 
 
-    Twitter Link
-    <textarea class="form-control sec5" name="sec5" style="width: 100%"></textarea> 
+    <textarea style="display: none" class="form-control sec5" name="sec5" style="width: 100%"></textarea> 
     
-    Facebook Link
-    <textarea class="form-control sec6" name="sec6" style="width: 100%"></textarea> 
+    <textarea style="display: none" class="form-control sec6" name="sec6" style="width: 100%"></textarea> 
     
-    Instgram Link
-    <textarea class="form-control sec7" name="sec7" style="width: 100%"></textarea> 
+    <textarea style="display: none" class="form-control sec7" name="sec7" style="width: 100%"></textarea> 
     
-    LinkedIn Profile Link
-    <textarea class="form-control sec8" name="sec8" style="width: 100%"></textarea> 
+    <textarea style="display: none" class="form-control sec8" name="sec8" style="width: 100%"></textarea> 
 
               <input  type="hidden" class="modaledel_id" name="modaledel_id" value="0"> 
               <input class="form-control" type="submit" value="Edit"> 

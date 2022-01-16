@@ -9,13 +9,19 @@ class AddColumnsToProductClickTable extends Migration
     /**
      * Run the migrations.
      *
-     * @return void
+     *  @return void
      */
     public function up()
     {
         Schema::table('product_clicks', function (Blueprint $table) {
             
-            $table->string('ip')->nullable();
+            $table->string('ip_')->nullable();
+            $table->string('countryName')->nullable();
+            $table->string('countryCode')->nullable();
+            $table->string('regionCode')->nullable();
+            $table->string('regionName')->nullable();
+            $table->string('cityName')->nullable();
+            $table->string('zipCode')->nullable();
         });
     }
 

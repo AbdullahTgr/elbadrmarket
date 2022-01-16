@@ -105,22 +105,65 @@ $scats = scat::get();
     public function increaseview($id)
     {
     
-        
-        $ip =  request()->ip(); //'196.128.8.27'; /* Static IP address
+
+
+
+    
+        $ip = '196.128.8.27'; /* Static IP address request()->ip()*/
         $currentUserInfo = Location::get($ip);
-       $dn= $this->check();
-        $data=[
-            'ip'=>request()->ip().' '.$dn,
-            'browser'=>request()->userAgent(),
-            'product_id'=>$id,
-            'latitude'=>$currentUserInfo->latitude,
-            'longitude'=>$currentUserInfo->longitude,
     
-    
-                    ];
-        $user = product_click::firstOrCreate($data);
-                    
+    $data = product_click::where('created_at','like','%'.substr(date('Y-m-d H:i:s'),0,10).'%')
+    ->where('ip',request()->ip())
+    ->where('ip_',request()->getClientIp())
+    ->where('browser',request()->userAgent())
+    ->where('product_id',$id)
+    ->where('latitude',$currentUserInfo->latitude)
+    ->where('longitude',$currentUserInfo->longitude)
+    ->get();
+           
+    if(isset($data[0]->id)){
+        $product_click = product_click::findOrFail($data[0]->id);
+        $product_click->countryName = $currentUserInfo->countryName;
+        $product_click->countryCode = $currentUserInfo->countryCode;
+        $product_click->regionCode = $currentUserInfo->regionCode;
+        $product_click->regionName = $currentUserInfo->regionName;
+        $product_click->cityName = $currentUserInfo->cityName;
+        $product_click->zipCode = $currentUserInfo->zipCode;
+        $product_click->latitude = $currentUserInfo->latitude;
+        $product_click->longitude = $currentUserInfo->longitude;
+        $product_click->product_id = $id;
         
+        $product_click->save();     
+    }else{
+        $product_click = new product_click();
+        $product_click->ip = request()->ip();
+        $product_click->ip_ = request()->getClientIp();
+        $product_click->browser = request()->userAgent();
+    
+        $product_click->countryName = $currentUserInfo->countryName;
+        $product_click->countryCode = $currentUserInfo->countryCode;
+        $product_click->regionCode = $currentUserInfo->regionCode;
+        $product_click->regionName = $currentUserInfo->regionName;
+        $product_click->cityName = $currentUserInfo->cityName;
+        $product_click->zipCode = $currentUserInfo->zipCode;
+        $product_click->latitude = $currentUserInfo->latitude;
+        $product_click->longitude = $currentUserInfo->longitude;
+        $product_click->product_id = $id;
+    
+        $product_click->save();    
+        
+    
+    }
+
+
+
+
+
+
+
+
+
+
     
     }
 
@@ -136,8 +179,6 @@ $scats = scat::get();
               return 'mobile';
           }
       
-          
-
       
       }
 
@@ -153,21 +194,16 @@ public function sign()
     $ip = '196.128.8.27'; /* Static IP address request()->ip()*/
     $currentUserInfo = Location::get($ip);
 
-    $data=[
-        'ip'=>request()->ip(),
-        'ip_'=>request()->getClientIp(),
-        'browser'=>request()->userAgent(),
-       // 'mac'=>exec('getmac'),
-        'latitude'=>$currentUserInfo->latitude,
-        'longitude'=>$currentUserInfo->longitude,
-
-
-                ];
-
-    $user = visitors::firstOrCreate($data);
-
-
-    $visitors = visitors::findOrFail($user->id);
+$data = visitors::where('created_at','like','%'.substr(date('Y-m-d H:i:s'),0,10).'%')
+->where('ip',request()->ip())
+->where('ip_',request()->getClientIp())
+->where('browser',request()->userAgent())
+->where('latitude',$currentUserInfo->latitude)
+->where('longitude',$currentUserInfo->longitude)
+->get();
+       
+if(isset($data[0]->id)){
+   $visitors = visitors::findOrFail($data[0]->id);
     $visitors->countryName = $currentUserInfo->countryName;
     $visitors->countryCode = $currentUserInfo->countryCode;
     $visitors->regionCode = $currentUserInfo->regionCode;
@@ -177,7 +213,28 @@ public function sign()
     $visitors->latitude = $currentUserInfo->latitude;
     $visitors->longitude = $currentUserInfo->longitude;
 
-    $visitors->save(); 
+    $visitors->save();     
+}else{
+    $visitors = new visitors();
+    $visitors->ip = request()->ip();
+    $visitors->ip_ = request()->getClientIp();
+    $visitors->browser = request()->userAgent();
+
+    $visitors->countryName = $currentUserInfo->countryName;
+    $visitors->countryCode = $currentUserInfo->countryCode;
+    $visitors->regionCode = $currentUserInfo->regionCode;
+    $visitors->regionName = $currentUserInfo->regionName;
+    $visitors->cityName = $currentUserInfo->cityName;
+    $visitors->zipCode = $currentUserInfo->zipCode;
+    $visitors->latitude = $currentUserInfo->latitude;
+    $visitors->longitude = $currentUserInfo->longitude;
+
+    $visitors->save();    
+    
+
+}
+
+ 
 
 }
 

@@ -4,10 +4,6 @@
 
 
 
-
- 
-
-
 @section('content')
 
     <!-- Hero Section Begin -->
@@ -113,9 +109,7 @@
 
 
                         <ul>
-                            <li><b>{{ trans('sentence.avaliable') }}</b> <span>In Stock</span></li>
-                            <li><b>{{ trans('sentence.shipping') }}</b> <span>01 day shipping. <samp>Free pickup today</samp></span></li>
-                            <li><b>{{ trans('sentence.weight') }}</b> <span>0.5 kg</span></li>
+                            <li><b>{{ trans('sentence.avaliable') }}</b> <span>{{ $product[0]->sec6 }}</span></li>
                             <li><b>{{ trans('sentence.shareon') }}</b>
                                 <div class="share">
                                     <a href="#"><i class="fa fa-facebook"></i></a>
