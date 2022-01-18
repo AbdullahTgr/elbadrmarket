@@ -66,19 +66,19 @@ if (session()->has('locale')) {
                           <div class="card">
                               <div class="card-header bg-white pb-0 border-0">
                                   <div class="row">
-                                      <div class="col text-right"><img class="img-fluid m-3 cross" src="https://retohercules.com/images/white-close-icon-png-3.png" data-dismiss="modal" alt="Image result for close png" width="17" height="17"></div>
+                                      <div class="col text-center"><img style="width: 90px;" class="img-fluid m-3 cross" src="img/login.png" data-dismiss="modal" alt="Image result for close png" width="17" height="17"></div>
                                   </div>
                               </div>
                               <div class="card-body pt-0">
                                   <div class="row justify-content-center text-center">
                                       <div class="col">
-                                          <p class="mb-2"><b>Sign up</b></p><small class="px-sm-5 px-2">Create an account to unlock all the benefisto easily save, like or submit your favorite content.</small>
+                                          <p class="mb-2"><b>دخول</b></p><small class="px-sm-5 px-2">اعمل حساب عشان تحجز منتجات اسرع  </small>
                                       </div>
                                   </div>
                                   <div class="row justify-content-center">
-                                      <div class="col-sm-9 mt-5"><button type="button" class="btn btn-icon btn-block text-left "><span><img src="https://img.icons8.com/color/48/000000/google-logo.png" class="img-fluid mr-1" width="25"></span> Sign up with Google</button></div>
-                                      <div class="col-sm-9 mt-2"><button type="button" class="btn btn-icon btn-block text-left "><span><img src="https://i.imgur.com/URmkevm.png" class="img-fluid mr-1" width="25"></span> Sign up with Facebook</button> </div>
-                                      <div class="col-sm-9 mt-2"><button type="button" class="btn btn-icon btn-block text-left "><span><img src="https://img.icons8.com/color/48/000000/twitter.png" class="img-fluid mr-1" width="25"></span> Sign up with Twitter</button> </div>
+                                      <div class="col-sm-9 mt-5" style="text-align: right;">الايميل<input type="text" class="btn btn-icon btn-block text-left "><span></span> </div>
+                                      <div class="col-sm-9 mt-2" style="text-align: right;"> كلمة المرور<input type="text" class="btn btn-icon btn-block text-left "><span></span> </div>
+                                      
                                   </div>
                                   <div class="row justify-content-center my-5">
                                       <div class="col-10">
@@ -87,7 +87,7 @@ if (session()->has('locale')) {
                                   </div>
                                   <div class="row mt-auto pt-auto text-center ">
                                       <div class="col mt-auto pt-auto">
-                                          <p class="signin">Sign in</p>
+                                          <p class="signin">دخول</p>
                                       </div>
                                   </div>
                               </div>
