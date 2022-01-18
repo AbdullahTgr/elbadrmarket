@@ -77,8 +77,17 @@ class AdminController extends Controller
         $todat_visitorcount = visitors::where('created_at','like','%'.substr(date('Y-m-d H:i:s'),0,10).'%')->get()->count();
         $visitorcount = visitors::get()->count();
 
+        if (!Auth::check()){
+            $role = Auth::user()->role;
+        $myid = Auth::user()->id;
+        }
+        
+        
+
         $usernum = User::get()->count();
+
         return view('management.index', compact('visitorcount','todat_visitorcount','usernum','productsnum','todayproducts','hme','setups','prd','service','about','portfolio','team','contactus'));
+    
     }
 
 

@@ -28,7 +28,7 @@ Route::group(['middleware' => ['cors', 'json.response']], function () {
     Route::get('/notifications_api/{user}', [App\Http\Controllers\ApiController::class, 'notifications'])->name('notifications.api')->middleware('auth.apikey');
     
  
-    Route::post('/login_api', [App\Http\Controllers\ApiController::class, 'login'])->name('login.api')->middleware('auth.apikey'); 
+    Route::post('/login_api', [App\Http\Controllers\ApiController::class, 'login'])->name('login.api')->middleware('auth.apikey');  
 
 
     Route::post('/register_api', [App\Http\Controllers\ApiController::class, 'register'])->name('register.api')->middleware('auth.apikey');

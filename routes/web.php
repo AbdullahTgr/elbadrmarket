@@ -1,6 +1,7 @@
 <?php
  
 use Illuminate\Support\Facades\Route;
+
  
 /*
 |--------------------------------------------------------------------------
@@ -13,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
   
-Route::get('/employees', [App\Http\Controllers\AdminController::class, 'users'])->name('users');
+Route::get('/employees', [App\Http\Controllers\AdminController::class, 'users'])->name('users')->middleware('roles:1,2');
 Route::get('/settings', [App\Http\Controllers\AdminController::class, 'settings'])->name('settings')->middleware('roles:1');
 Route::get('/management', [App\Http\Controllers\AdminController::class, 'management'])->name('management')->middleware('roles:1');
 
@@ -56,9 +57,9 @@ Route::get('sub_cats{id}', [App\Http\Controllers\HomeController::class, 'sub_cat
 
 
 
-Route::get('/dash', [App\Http\Controllers\AdminController::class, 'dash'])->name('dash');
+Route::get('/dash', [App\Http\Controllers\AdminController::class, 'dash'])->name('dash')->middleware('roles:1,2');
 
-Route::get('/deleteuserlog/{id}', [App\Http\Controllers\AdminController::class, 'deleteuserlog'])->name('deleteuserlog');
+Route::get('/deleteuserlog/{id}', [App\Http\Controllers\AdminController::class, 'deleteuserlog'])->name('deleteuserlog')->middleware('roles:1,2');
 
 
 ///////////////////
@@ -89,10 +90,10 @@ Route::post('load_products', [App\Http\Controllers\HomeController::class, 'load_
 
 
 
-Route::get('crop-image-upload',[App\Http\Controllers\AdminController::class, 'imgcrop'] );
-Route::post('crop-image-upload',[App\Http\Controllers\AdminController::class, 'uploadCropImage'] );
-Route::post('crop-image-upload_port',[App\Http\Controllers\AdminController::class, 'uploadCropImage_port'] );
-Route::post('crop-image-upload_team',[App\Http\Controllers\AdminController::class, 'uploadCropImage_team'] );
+Route::get('crop-image-upload',[App\Http\Controllers\AdminController::class, 'imgcrop'] )->middleware('roles:1,2');
+Route::post('crop-image-upload',[App\Http\Controllers\AdminController::class, 'uploadCropImage'] )->middleware('roles:1,2');
+Route::post('crop-image-upload_port',[App\Http\Controllers\AdminController::class, 'uploadCropImage_port'] )->middleware('roles:1,2');
+Route::post('crop-image-upload_team',[App\Http\Controllers\AdminController::class, 'uploadCropImage_team'] )->middleware('roles:1,2');
 
 
 
@@ -136,12 +137,12 @@ Route::post('/editftr', [App\Http\Controllers\AdminController::class, 'editftr']
 
 
 Route::get('/showproduct{id}', [App\Http\Controllers\HomeController::class, 'showproduct'])->name('showproduct');
-Route::get('/eco', [App\Http\Controllers\AdminController::class, 'eco'])->name('eco');
-Route::get('/mcats', [App\Http\Controllers\AdminController::class, 'mcats'])->name('mcats');
-Route::get('/scats', [App\Http\Controllers\AdminController::class, 'scats'])->name('scats');
-Route::get('/m_products', [App\Http\Controllers\AdminController::class, 'm_products'])->name('m_products');
+Route::get('/eco', [App\Http\Controllers\AdminController::class, 'eco'])->name('eco')->middleware('roles:1,2');
+Route::get('/mcats', [App\Http\Controllers\AdminController::class, 'mcats'])->name('mcats')->middleware('roles:1,2');
+Route::get('/scats', [App\Http\Controllers\AdminController::class, 'scats'])->name('scats')->middleware('roles:1,2');
+Route::get('/m_products', [App\Http\Controllers\AdminController::class, 'm_products'])->name('m_products')->middleware('roles:1,2');
 
-Route::get('/panars', [App\Http\Controllers\AdminController::class, 'panars'])->name('panars');
+Route::get('/panars', [App\Http\Controllers\AdminController::class, 'panars'])->name('panars')->middleware('roles:1,2');
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -149,7 +150,7 @@ Route::get('/addmcat', [App\Http\Controllers\AdminController::class, 'addmcat'])
 Route::post('/deletemcat', [App\Http\Controllers\AdminController::class, 'deletemcat'])->name('deletemcat')->middleware('roles:1');
 Route::post('/insertmcat', [App\Http\Controllers\AdminController::class, 'insertmcat'])->name('insertmcat')->middleware('roles:1');
 Route::post('/editmcat', [App\Http\Controllers\AdminController::class, 'editmcat'])->name('editmcat')->middleware('roles:1');
-Route::post('crop-image-upload_mcat',[App\Http\Controllers\AdminController::class, 'uploadCropImage_mcat'] );
+Route::post('crop-image-upload_mcat',[App\Http\Controllers\AdminController::class, 'uploadCropImage_mcat'] )->middleware('roles:1,2');
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -157,7 +158,7 @@ Route::get('/addscat', [App\Http\Controllers\AdminController::class, 'addscat'])
 Route::post('/deletescat', [App\Http\Controllers\AdminController::class, 'deletescat'])->name('deletescat')->middleware('roles:1');
 Route::post('/insertscat', [App\Http\Controllers\AdminController::class, 'insertscat'])->name('insertscat')->middleware('roles:1');
 Route::post('/editscat', [App\Http\Controllers\AdminController::class, 'editscat'])->name('editscat')->middleware('roles:1');
-Route::post('crop-image-upload_scat',[App\Http\Controllers\AdminController::class, 'uploadCropImage_scat'] );
+Route::post('crop-image-upload_scat',[App\Http\Controllers\AdminController::class, 'uploadCropImage_scat'] )->middleware('roles:1,2');
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -165,7 +166,7 @@ Route::get('/addproduct', [App\Http\Controllers\AdminController::class, 'addprod
 Route::post('/deleteproduct', [App\Http\Controllers\AdminController::class, 'deleteproduct'])->name('deleteproduct')->middleware('roles:1');
 Route::post('/insertproduct', [App\Http\Controllers\AdminController::class, 'insertproduct'])->name('insertproduct')->middleware('roles:1');
 Route::post('/editproduct', [App\Http\Controllers\AdminController::class, 'editproduct'])->name('editproduct')->middleware('roles:1');
-Route::post('crop-image-upload_product',[App\Http\Controllers\AdminController::class, 'uploadCropImage_product'] );
+Route::post('crop-image-upload_product',[App\Http\Controllers\AdminController::class, 'uploadCropImage_product'] )->middleware('roles:1,2');
 
 
 
@@ -231,7 +232,7 @@ Route::post('/editabout_bottom_questions', [App\Http\Controllers\AdminController
 Route::get('lang/{locale}',[App\Http\Controllers\HomeController::class, 'lang'])->name('lang'); 
 
 
-Route::post('/disable_enable', [App\Http\Controllers\AdminController::class, 'disable_enable'])->name('disable_enable');
+Route::post('/disable_enable', [App\Http\Controllers\AdminController::class, 'disable_enable'])->name('disable_enable')->middleware('roles:1,2');
 
 Route::get('client/ip', [App\Http\Controllers\HomeController::class, 'getIp']);
 
