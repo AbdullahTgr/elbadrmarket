@@ -50,7 +50,9 @@ h6 {
 	font-weight: 400;
 	font-family: "Cairo", sans-serif;
 }
-
+.hidd{
+	display: none;
+}
 h1 {
 	font-size: 70px;
 }

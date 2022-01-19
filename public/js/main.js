@@ -100,6 +100,45 @@
         $('.hero__categories ul').slideToggle(400);
     });
 
+
+    $(document).on('click','.switch_register', function(){
+        $('.text-submit').text("انشاء حساب");
+        $('.form-action').attr('action','register');
+        $('.switch_register').addClass('hidd');
+        $('.switch_login').removeClass('hidd');
+
+        $('.name_reg').removeClass('hidd');
+        $('.repass').removeClass('hidd');
+
+
+        $(".nme").attr("required",'required');
+        $(".rp").attr("required",'required');
+
+    });
+    $(document).on('click','.switch_login', function(){
+        $('.text-submit').text("دخول");
+        $('.form-action').attr('action','login');
+        $('.switch_login').addClass('hidd');
+        $('.switch_register').removeClass('hidd');
+
+        
+        $('.repass').addClass('hidd');
+        $('.name_reg').addClass('hidd');
+
+        
+        $(".nme").removeAttr("required");
+        $(".rp").removeAttr("required");
+    });
+
+    
+    
+    
+    
+
+
+
+    
+
     /*--------------------------
         Latest Product Slider
     ----------------------------*/

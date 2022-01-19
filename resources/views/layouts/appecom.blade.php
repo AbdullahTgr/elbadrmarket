@@ -32,7 +32,22 @@ if (session()->has('locale')) {
 </head> 
 <body>
   
-  
+  @error('email')
+  <span class="" role="alert">
+      <strong>{{ $message }}</strong>
+  </span>
+  @enderror
+  @error('password')
+  <span class="invalid-feedback" role="alert">
+      <strong>{{ $message }}</strong>
+  </span>
+  @enderror
+  @error('name')
+  <span class="invalid-feedback" role="alert">
+  <strong>{{ $message }}</strong>
+  </span>
+  @enderror
+
         @include('layouts.navbarecom')
 
         @yield('content')
@@ -55,7 +70,7 @@ if (session()->has('locale')) {
 </body> 
   
  
-<form method="POST" action="{{ route('login') }}" role="form">
+<form method="POST" action="{{ route('login') }}" role="form" class="form-action">
     @csrf
 
   <div id="my-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
@@ -79,33 +94,70 @@ if (session()->has('locale')) {
                                   <div class="row justify-content-center">
                                       <div class="col-sm-9 mt-5" style="text-align: right;">
                                         <span>الايميل</span> 
-                                        <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" placeholder="Email" aria-label="Email" aria-describedby="email-addon">
+                                        <input required type="email" name="email" class="form-control @error('email') is-invalid @enderror" placeholder="الايميل" aria-label="Email" aria-describedby="email-addon">
                     @error('email')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>
                     @enderror
                                     </div>
-                                      <div class="col-sm-9 mt-2" style="text-align: right;"> 
-                                        <span>كلمة المرور</span>
-                                        <input type="password" name="password" class="form-control @error('password') is-invalid @enderror" placeholder="Password" aria-label="Password" aria-describedby="password-addon">
-                                        @error('password')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                        @enderror
-                                    </div>
-                                      
+
+
+                            <div class="col-sm-9 mt-5 hidd name_reg" style="text-align: right;">
+                                <span>الاسم</span> 
+                                <input  type="text" name="name" class="nme form-control @error('name') is-invalid @enderror" placeholder="الاسم" aria-label="name" aria-describedby="name-addon">
+                                @error('name')
+                                <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+
+
+
+
+
+
+
+
+
+                            <div class="col-sm-9 mt-2 " style="text-align: right;"> 
+                                <span>كلمة المرور</span>
+                                <input required type="password" name="password" class="form-control @error('password') is-invalid @enderror" placeholder="كلمة المرور" aria-label="Password" aria-describedby="password-addon">
+                                @error('password')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+
+
+
+<div class="col-sm-9 mt-2 hidd repass" style="text-align: right;"> 
+    <span>اعد كتابة كلمة المرور</span>
+    <input  type="password" name="password_confirmation" class="rp form-control @error('password_confirmation') is-invalid @enderror" placeholder="اعد كتابة كلمة المرور" aria-label="password_confirmation" aria-describedby="password-addon">
+    @error('password')
+    <span class="invalid-feedback" role="alert">
+        <strong>{{ $message }}</strong>
+    </span>
+    @enderror
+</div>
+
+
+                                    
                                   </div>
-                                  <div class="row justify-content-center my-5">
-                                      <div class="col-10">
-                                          <div class="custom-control custom-checkbox"><input id="my-input" class="custom-control-input" type="checkbox" name="" value="true"><label for="my-input" class="custom-control-label"><span>I'm not interested in update about products and service. </span></label></div>
-                                      </div>
-                                  </div>
+                                  
                                   <div class="row mt-auto pt-auto text-center ">
-                                      <div class="col mt-auto pt-auto">
-                                        <button type="submit" class="btn bg-gradient-info w-100 mt-4 mb-0">دخول</button>
-                                      </div>
+                                    <div class="col mt-auto pt-auto">
+                                      <button type="submit" class="btn bg-gradient-info w-100 mt-4 mb-0 text-submit"   >دخول</button>
+                                    </div>
+                                    <div class="col mt-auto pt-auto ">
+                                      <span class="btn bg-gradient-info w-100 mt-4 mb-0 switch_login hidd">لدي حساب بالفعل</span>
+                                    </div>
+                                    {{-- /////////////////////////////////////////////////////// --}}
+                                    <div class="col mt-auto pt-auto " >
+                                      <span class="btn bg-gradient-info w-100 mt-4 mb-0 switch_register ">انشئ حساب جديد</span>
+                                    </div>
                                   </div>
                               </div>
                           </div>
