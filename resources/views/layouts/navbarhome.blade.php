@@ -7,7 +7,8 @@ if (session()->has('locale')) {
 }else{
     session()->put('locale', 'ar'); 
         }
-        
+    
+      
 ?>
 
   <header id="header" class="fixed-top ">

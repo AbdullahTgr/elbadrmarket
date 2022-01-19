@@ -52,10 +52,11 @@ if (session()->has('locale')) {
 
         @yield('scripts')  
 
-</body>
+</body> 
   
-
-
+ 
+<form method="POST" action="{{ route('login') }}" role="form">
+    @csrf
 
   <div id="my-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered justify-content-center " role="document">
@@ -76,8 +77,24 @@ if (session()->has('locale')) {
                                       </div>
                                   </div>
                                   <div class="row justify-content-center">
-                                      <div class="col-sm-9 mt-5" style="text-align: right;">الايميل<input type="text" class="btn btn-icon btn-block text-left "><span></span> </div>
-                                      <div class="col-sm-9 mt-2" style="text-align: right;"> كلمة المرور<input type="text" class="btn btn-icon btn-block text-left "><span></span> </div>
+                                      <div class="col-sm-9 mt-5" style="text-align: right;">
+                                        <span>الايميل</span> 
+                                        <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" placeholder="Email" aria-label="Email" aria-describedby="email-addon">
+                    @error('email')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
+                                    </div>
+                                      <div class="col-sm-9 mt-2" style="text-align: right;"> 
+                                        <span>كلمة المرور</span>
+                                        <input type="password" name="password" class="form-control @error('password') is-invalid @enderror" placeholder="Password" aria-label="Password" aria-describedby="password-addon">
+                                        @error('password')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                        @enderror
+                                    </div>
                                       
                                   </div>
                                   <div class="row justify-content-center my-5">
@@ -87,7 +104,7 @@ if (session()->has('locale')) {
                                   </div>
                                   <div class="row mt-auto pt-auto text-center ">
                                       <div class="col mt-auto pt-auto">
-                                          <p class="signin">دخول</p>
+                                        <button type="submit" class="btn bg-gradient-info w-100 mt-4 mb-0">دخول</button>
                                       </div>
                                   </div>
                               </div>
@@ -98,6 +115,8 @@ if (session()->has('locale')) {
           </div>
       </div>
   </div>
+  
+</form>
 </div>
 
 

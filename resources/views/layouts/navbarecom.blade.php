@@ -27,7 +27,23 @@
                     </ul>
                 </div>
                 <div class="header__top__right__auth">
-                    <a href="" data-toggle="modal" data-target="#my-modal"><i class="fa fa-user"></i> {{ trans('sentence.login')}}</a>
+
+                    @if (Auth::check())
+                    <a class="nav-link" style="display: inline;" href="#" onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();">
+                    
+                              <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                               @csrf
+                              </form>  
+                    خروج
+                            </a>
+                    @else
+                    <div class="header__top__right__auth">
+                        <a href=""  data-toggle="modal" data-target="#my-modal"><i class="fa fa-user"></i> {{ trans('sentence.login')}}</a>
+                    </div>
+                    @endif
+
+                   
                 </div>
             </div> 
             <nav class="humberger__menu__nav mobile-menu">
@@ -68,6 +84,9 @@
                           <div class="header__top__right__social">
                               <a href="#"><i class="fa fa-facebook"></i></a>
                           </div>
+
+
+
                           <div class="header__top__right__language">
                               <img src="img/language.png" alt="">
                               <div>{{ trans('sentence.english')}}</div>
@@ -77,9 +96,24 @@
                                 <li><a href="{{ route('lang',['en']) }}">{{ trans('sentence.english')}}</a></li>
                               </ul>
                           </div>
-                          <div class="header__top__right__auth">
-                              <a href=""  data-toggle="modal" data-target="#my-modal"><i class="fa fa-user"></i> {{ trans('sentence.login')}}</a>
-                          </div>
+
+                          
+
+@if (Auth::check())
+<a class="nav-link" style="display: inline;" href="#" onclick="event.preventDefault();
+        document.getElementById('logout-form').submit();">
+
+          <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+           @csrf
+          </form>  
+خروج
+        </a>
+@else
+<div class="header__top__right__auth">
+    <a href=""  data-toggle="modal" data-target="#my-modal"><i class="fa fa-user"></i> {{ trans('sentence.login')}}</a>
+</div>
+@endif
+          
                       </div>
                   </div>
               </div>

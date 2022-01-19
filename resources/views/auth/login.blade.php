@@ -6,8 +6,8 @@
 @section('content')
 
 <section style="direction: ltr;">
-    <div class="page-header min-vh-75">
-      <div class="container">
+    <div class="page-header min-vh-75"> 
+      <div class="container"> 
         <div class="row">
           <div class="col-xl-4 col-lg-5 col-md-6 d-flex flex-column mx-auto">
             <div class="card card-plain mt-8"  style="direction: rtl;">
@@ -57,5 +57,8 @@
       </div>
     </div>
   </section>
+
+
+
 
 @endsection

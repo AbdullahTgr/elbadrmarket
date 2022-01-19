@@ -1,7 +1,12 @@
 @extends('layouts.appecom')
 
 @section('content')
-  
+<pre>
+<?php
+
+     //   print_r(session());
+?>
+</pre>
 
     <!-- Hero Section Begin -->
     <section class="hero" style="
