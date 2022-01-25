@@ -1,6 +1,10 @@
 /node_modules
 /public/hot
 /public/storage
+/public/product_imgs
+/public/img
+/public/mcat_imgs
+/public/scat_imgs
 /storage/*.key
 /vendor
 .env
