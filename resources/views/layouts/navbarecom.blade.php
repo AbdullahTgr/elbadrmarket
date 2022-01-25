@@ -105,7 +105,7 @@
             <ul>
               <li><a href="{{ route('myprofile',Auth::user()->id) }}">بروفايل </a></li>
               <li><a href="#" onclick="event.preventDefault();
-                document.getElementById('logout-form').submit();">خــــOOــروج</a></li>
+                document.getElementById('logout-form').submit();">خــــــروج</a></li>
             </ul>
         </div>
         
