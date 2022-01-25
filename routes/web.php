@@ -70,7 +70,7 @@ Route::post('load_products', [App\Http\Controllers\HomeController::class, 'load_
 
 
 Route::get('myprofile{id}', [App\Http\Controllers\AdminController::class, 'myprofile'])->name('myprofile')->middleware('isme:4');
-Route::post('updateprofile{id}', [App\Http\Controllers\AdminController::class, 'updateprofile'])->name('updateprofile')->middleware('isme:{id}');
+Route::post('updateprofile{id}', [App\Http\Controllers\AdminController::class, 'updateprofile'])->name('updateprofile')->middleware('isme:4');
 
 
 
