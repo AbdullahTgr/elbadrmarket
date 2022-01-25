@@ -16,6 +16,7 @@ class UserRoles
      */
     public function handle($request, Closure $next, ...$roles)
     {
+        print_r($roles) ;
         return collect($roles)->contains(auth()->user()->role) ? $next($request) : redirect()->route('products');
     }
 } 

@@ -69,5 +69,6 @@ class Kernel extends HttpKernel
         'json.response' => \App\Http\Middleware\ForceJsonResponse::class,
         'cors' => \App\Http\Middleware\Cors::class,
         'roles' => \App\Http\Middleware\UserRoles::class,
+        'isme' => \App\Http\Middleware\checkme::class,
     ];
 }

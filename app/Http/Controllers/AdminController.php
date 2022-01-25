@@ -1282,6 +1282,28 @@ public function editabout_bottom_questions(Request $request)
 }
 
 
+public function myprofile($id)
+{
+    $user=User::where('id',$id)->get();
+    return view('myprofile',compact('user'));
+}
+
+
+public function updateprofile($id,Request $request)
+{
+    $user = User::findOrFail($id);
+    $user->name = $request->name;
+    $user->first_name = $request->first_name;
+    $user->last_name = $request->last_name;
+    $user->phone = $request->phone;
+    $user->job_title = $request->job_title;
+    $user->job_description = $request->job_description;
+    $user->email = $request->email;
+    
+
+    $user->save();
+    return redirect()->back();
+}
 
 
 public function deleteabout(Request $request) 

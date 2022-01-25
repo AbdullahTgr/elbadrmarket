@@ -1,5 +1,6 @@
 <?php
- 
+
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
  
@@ -68,10 +69,14 @@ Route::get('s__products{id}', [App\Http\Controllers\HomeController::class, 's__p
 Route::post('load_products', [App\Http\Controllers\HomeController::class, 'load_products'])->name('load_products');
 
 
+Route::get('myprofile{id}', [App\Http\Controllers\AdminController::class, 'myprofile'])->name('myprofile')->middleware('isme:4');
+Route::post('updateprofile{id}', [App\Http\Controllers\AdminController::class, 'updateprofile'])->name('updateprofile')->middleware('isme:{id}');
 
 
 
 
+
+// Route::get('/employee/{id}', [App\Http\Controllers\AdminController::class, 'profile'])->name('profile')->middleware('roles:1,2');
 
 
 

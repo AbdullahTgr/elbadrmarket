@@ -3,69 +3,91 @@
 // sentence.php
 
 return [
-    'span' => 'Span',
-    'home' => 'Home',
-    'about' => 'Who We Are',
-    'services' => 'Services',
-    'prds'    => 'Products',
-    'portfolio' => 'Portfolio',
-    'team' => 'Team',
-    'contact' => 'Contact Us',
-    'english' => 'English',
-    'arabic' => 'Arabic',
+    'span' => 'سبان',
+    'home' => 'الرئيسية',
+    'about' => 'من نحن',
+    'services' => 'خدمات',
+    'prds' => 'منتجات',
+    'portfolio' => 'اعمال',
+    'team' => 'الفريق',
+    'contact' => 'اتصل بنا',
+    'english' => 'الانجليزية',
+    'arabic' => 'العربية',
+    'span' => 'سبان',
 
-    'getstarted' => 'Get Started',
-    'watchvideo' => 'Watch Video',
-    'learnmore' => 'Learn More',
-    'more' => 'More',
-    'yourname' => 'Your Name',
-    'youremail' => 'Your Email',
-    'subject' => 'Subject',
-    'message' => 'Message',
-    'loading' => 'Loading',
-    'yourmessagehavebeensent' => 'Your Message Have Been Sent',
-    'sendmessage' => 'Send Message',
-    'allrights' => 'All Rights Reserved',
-    'phone' => 'Phone',
-    'email' => 'Email',
-    'links' => 'Links',
-    'location' => 'Location',
-    'Exhibit' => 'Exhibit',
-    'bookplan' => 'Book Plan',
-    'products' => 'Shop Now',
-    'address' => 'Address',
-    
-'shop' => 'Shop',
-'blog' => 'Blog',
-'contacts' => 'Contact',
-'login' => 'Login',
-'register' => 'Register',
-'item' => 'Item',
-'currency' => 'L.E',
+    'getstarted' => 'ابدأ',
+    'watchvideo' => 'شاهد الفيديو',
+    'learnmore' => 'تعلم المزيد',
+    'more' => 'المزيد',
+    'yourname' => 'اسمك',
+    'youremail' => 'ايميلك',
+    'subject' => 'الموضوع',
+    'message' => 'الرسالة',
+    'loading' => 'تحميل',
+    'yourmessagehavebeensent' => 'تم ارسال رسالتك',
+    'sendmessage' => 'ارسال الرسالة',
+    'allrights' => 'جميع الحقوق محفوظة',
+    'phone' => 'تيليفون',
+    'email' => 'ايميل',
+    'links' => 'روابط',
+    'location' => 'الموقع',
+    'Exhibit' => 'المعرض',
+    'bookplan' => 'حجز الخطة',
+    'products' => 'تسوق الان',
+    'elbadr' => 'البدر',
+    'address' => 'العنوان',
 
-'avaliable' => 'Avaliable ',
-'shipping' => 'Shipping',
-'weight' => 'Weight',
-'shareon' => 'Share via',
-'description' => 'Description',
-'information' => 'Information',
-'rewiews' => 'Reviews',
-'relatedproducts' => 'Related Products',
-'addtocart' => 'Add To Cart',
+'shop' => 'تسوق',
+'blog' => 'مدونة',
+'contacts' => 'تواصل معنا',
+
+'login' => 'دخول',
+'register' => 'تسجيل',
+'item' => 'عنصر',
+'currency' => 'جنية',
+
+'avaliable' => 'الكمية المتاحة',
+'shipping' => 'شحن',
+'weight' => 'الوزن',
+'shareon' => 'مشاركة عبر ',
+
+'description' => 'وصف',
+'information' => 'معلومات',
+'rewiews' => 'تقيمات',
+'relatedproducts' => 'منتجات ذات صلة',
+'addtocart' => 'أضف إلي العربة',
 
 
-'addproductplease' => 'Please Add Products',
-'mostvisit' => 'Most Visit',
-'new' => 'New',
-'latestproducts' => 'Latest Products',
-'topratedproducts' => 'Top Rated Products',
-'reviewedproducts' => 'Reviewed Products',
-'whoweare' => 'Who We Are',
-'search' => 'Search',
-'whatdoyouneed' => 'What Do You Need',
-'allcategories' => 'All Categories',
 
-'freeshipping' => 'Free shipping for 6 of october city',
+'addproductplease' => 'من فضلك اضف منتجات',
+'mostvisit' => 'الاكثر زياره',
+'new' => 'جديد',
+'latestproducts' => 'اخر منتجات',
+'topratedproducts' => 'الاعلي تقيما',
+'reviewedproducts' => 'المنتجات المقيمة',
+'freeshipping' => 'شحن مجاني لعملاء 6 اكتوبر',
+
+
+
+'whoweare' => 'من نحن',
+
+
+
+'search' => 'بحث',
+'whatdoyouneed' => 'ماذا تحتاج ؟',
+'allcategories' => 'جميع الاقسام',
+
+
+
+
+
+
 ];
+
+
+
+
+
+
 
 

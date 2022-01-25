@@ -87,31 +87,48 @@
 
 
 
-                          <div class="header__top__right__language">
-                              <img src="img/language.png" alt="">
-                              <div>{{ trans('sentence.english')}}</div>
-                              <span class="arrow_carrot-down"></span>
-                              <ul>
-                                <li><a href="{{ route('lang',['ar']) }}">{{ trans('sentence.arabic')}}</a></li>
-                                <li><a href="{{ route('lang',['en']) }}">{{ trans('sentence.english')}}</a></li>
-                              </ul>
-                          </div>
+                     
 
                           
 
 @if (Auth::check())
-<a class="nav-link" style="display: inline;" href="#" onclick="event.preventDefault();
-        document.getElementById('logout-form').submit();">
 
-          <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+
+
+        <div class="header__top__right__language">
+            <img src="img/language.png" alt="">
+            <div>{{ Auth::user()->name; }}</div>
+            <span class="arrow_carrot-down"></span> 
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
            @csrf
-          </form>  
-خروج
-        </a>
+        </form>  
+            <ul>
+              <li><a href="{{ route('myprofile',Auth::user()->id) }}">بروفايل </a></li>
+              <li><a href="#" onclick="event.preventDefault();
+                document.getElementById('logout-form').submit();">خروج</a></li>
+            </ul>
+        </div>
+        
+
+
+
+
 @else
-<div class="header__top__right__auth">
-    <a href=""  data-toggle="modal" data-target="#my-modal"><i class="fa fa-user"></i> {{ trans('sentence.login')}}</a>
+
+
+<div class="header__top__right__language">
+    <img src="img/language.png" alt="">
+    <div>تسجيل</div>
+    <span class="arrow_carrot-down"></span>
+    <ul>
+      <li><a data-toggle="modal" data-target="#my-modal">{{ trans('sentence.login')}}</a></li>
+    </ul>
 </div>
+
+
+
+
+
 @endif
           
                       </div>
