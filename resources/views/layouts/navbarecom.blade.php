@@ -72,7 +72,7 @@
                   <div class="col-lg-6 col-md-6">
                       <div class="header__top__right">
                           <ul>
-                              <li><i class="fa fa-envelope"></i> elbadrstore@gmail.com</li>
+                              <li><i class="fa fa-envelope"></i> elbadrswwwwwtore@gmail.com</li>
                               <li>{{ trans('sentence.freeshipping')}}</li>
                           </ul>
                       </div>
