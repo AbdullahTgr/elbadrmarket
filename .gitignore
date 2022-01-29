@@ -3,6 +3,7 @@
 /public/storage
 /public/product_imgs
 /public/img
+
 /public/mcat_imgs
 /public/scat_imgs
 /storage/*.key
@@ -16,5 +17,5 @@ Homestead.yaml
 npm-debug.log
 yarn-error.log
 /.idea
-/.vscode
+/.vscode 
 
