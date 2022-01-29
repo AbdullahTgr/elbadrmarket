@@ -17,7 +17,4 @@ npm-debug.log
 yarn-error.log
 /.idea
 /.vscode
-/public/mcat_imgs
-/public/scat_imgs
-/public/product_imgs
-/public/img
+
