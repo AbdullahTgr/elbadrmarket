@@ -34,7 +34,7 @@
     <div class="hero__text">
         <span>معدات نادرة</span>
         <h2>رجلاش <br />100% استانلس</h2>
-        <p>  جبنة براميلي منزوعة الدسم</p>
+        <p>  </p>
         <a href="#" class="primary-btn">احجز الان</a>
     </div>
 </div>
